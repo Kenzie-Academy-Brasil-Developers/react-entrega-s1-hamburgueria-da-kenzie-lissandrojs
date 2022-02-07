@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+.titulo--card{
+    margin-top: 25px;
+    width: 382px;
+    height: 65px;
+    background-color: #27AE60;
+    border-radius: 5px 5px 0px 0px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color:  #FFFFFF;
+    display: flex;
+}
+.titulo--card h2{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    font-size: 18px;
+
+}
+.main--card{
+    width:380px;
+    height:470px;
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 0px 0px 5px 5px;
+
+}
+.item--card{
+    display: flex;
+}
+.item--card img{
+    background-color: #E0E0E0;
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    margin: 5px 10px 0 0;
+
+}
+.item--card h2{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+.item--card p{
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #828282;
+}
+.main--item{
+    display: flex;
+    flex-direction: row;
+    width: 380px;
+    justify-content: space-evenly;
+}
+
+
+.div--border{
+    border-top: 2px solid #E0E0E0;
+    width: 343px;
+}
+.valor--total{
+    width: 100%;
+    margin-top: 19px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+.valor--total span{
+    color: #828282;
+
+}
+
+.div--border button{
+    width: 343px;
+    height: 60px;
+    background-color: #E0E0E0;
+    border: none;
+    border-radius: 8px;
+    margin: 15px 0 20px 0 ;
+    color: #828282;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.container--main--item{
+    overflow-y: auto;
+}
+.info--burger{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.main--item button{
+    width: 118px;
+    border: none;
+    background: none;
+    color: #BDBDBD;
+}
+.align--card{
+    margin-right: 0px;
+}
+@media screen and (min-width: 700px) {
+    .titulo--card{
+        width: 365px;
+        height: 65px;
+    }
+    .main--card{
+        width: 363px;
+    }
+    .align--card{
+        margin-right: 30px;
+    }
+}

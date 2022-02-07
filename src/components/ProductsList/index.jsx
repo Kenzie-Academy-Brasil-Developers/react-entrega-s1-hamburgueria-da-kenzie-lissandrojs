@@ -1,8 +1,8 @@
 import Product from '../Product'
-
+import './style.css'
 const ProductsList = ({produto})=>{
     return(
-        <div>
+        <div className='main--burger'>
             {produto.map((item)=>
             (  
                 <div>

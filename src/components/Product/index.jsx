@@ -1,12 +1,24 @@
+import './style.css'
 const Product =({img,name,category,price})=>{
     
     
    return  (
-        <div>
-            <img src={img} alt={name}/>
-            <h4>{name}</h4>
-            <p>{category}</p>
-            <span>{price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
+        <div className='container--burguer'>
+            <section className='container--item'>
+                <div className='container--img'>
+                    <img src={img} alt={name}/>
+                </div>
+               
+                <h4>{name}</h4>
+                <p>{category}</p>
+                <div className='container--btn'>
+
+                <span>{price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
+                <button className='btn--add'>Adicionar</button>
+                </div>
+                
+            </section>
+            
         </div>
     )
 
