@@ -6,24 +6,30 @@ import Header from './components/HeaderBurger';
 import Card from './components/Card';
 function App() {
   const [produto,setProduto] = useState([])
-  const [currentSale,setCurrentSale] = useState(0)
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [currentSale, setCurrentSale] = useState([])
+  const [cartTotal, setCartTotal] = useState(0)
   useEffect(()=>{
     fetch('https://hamburgueria-kenzie-json-serve.herokuapp.com/products').then((resp) => resp.json()).then((resp) => setProduto(resp))
   },[])
  
- const showProducts =()=>{
+ const showProducts =(value)=>{
+    produto.filter((item)=>{
+      return  value === item.name || value === item.category
+    })
 
  }
  const handleClick =(productId)=>{
-   
+    let addProd =produto.find((item)=> item.id == productId)
+    setCurrentSale([...currentSale,addProd])
  }
 
   return (
     <div>
         <Header></Header>
         <div className='align--main'>
-          <ProductsList produto={produto}></ProductsList>
-          <Card produto={produto}></Card>
+          <ProductsList handleClick={handleClick}produto={produto}></ProductsList>
+          <Card currentSale={currentSale} ></Card>
         </div>
         
     </div>

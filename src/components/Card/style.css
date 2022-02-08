@@ -53,9 +53,10 @@
 }
 .main--item{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 380px;
     justify-content: space-evenly;
+    overflow-x: auto;
 }
 
 
@@ -88,9 +89,7 @@
     font-weight: 600;
 }
 
-.container--main--item{
-    overflow-y: auto;
-}
+
 .info--burger{
     display: flex;
     flex-direction: column;

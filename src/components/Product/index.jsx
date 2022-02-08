@@ -1,5 +1,5 @@
 import './style.css'
-const Product =({img,name,category,price})=>{
+const Product =({img,name,category,price,handleClick,id})=>{
     
     
    return  (
@@ -14,7 +14,7 @@ const Product =({img,name,category,price})=>{
                 <div className='container--btn'>
 
                 <span>{price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
-                <button className='btn--add'>Adicionar</button>
+                <button onClick={(event)=>{handleClick(event.target.id)}} id={id} className='btn--add'>Adicionar</button>
                 </div>
                 
             </section>
