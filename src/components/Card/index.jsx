@@ -1,7 +1,14 @@
 import "./style.css";
 import "./reset.css";
-const Card = ({ currentSale}) => {
-  console.log(currentSale)
+const Card = ({ currentSale,setCurrentSale}) => {
+  
+  const calcTotal =()=>{
+   const allValue = currentSale.reduce((previousValue, currentValue) => previousValue + currentValue.price,0)
+   return allValue
+  }
+  const  test =(itemF)=>  {
+    setCurrentSale(currentSale.filter((value)=> value.id !== itemF))
+   }
   return (
     
 
@@ -12,11 +19,11 @@ const Card = ({ currentSale}) => {
           <section className="main--card">
             <div className="container--main--item">
 
-          
+              
                 <ul className="main--item">
                   {currentSale.map((item)=>{ return(
                                   
-                                        <li className="item--card">
+                                        <li key={item.id} className="item--card">
 
                                         <img src={item.img} alt={item.name} />
                                         <div className="info--burger">
@@ -24,7 +31,7 @@ const Card = ({ currentSale}) => {
                                             <h2>{item.name}</h2>
                                             <p>{item.category}</p>
                                         </div>
-                                        <button>Remover</button>
+                                        <button id={item.id} onClick={(event)=>{test(item.id)}}>Remover</button>
                                       </li>
                   )})}
 
@@ -36,7 +43,7 @@ const Card = ({ currentSale}) => {
 
                 <div className="valor--total">
                 <p>Total:</p>
-                <span>R$40,00</span>
+                <span>R$ {calcTotal().toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
                 </div>
 
                 <button>Remover todos</button>

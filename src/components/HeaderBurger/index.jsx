@@ -1,5 +1,5 @@
 import './style.css'
-const Header =()=>{
+const Header =({setFilteredProducts,setValueInput,showProducts})=>{
     return(
         <header>
             <div className='logo--burger'>
@@ -8,8 +8,8 @@ const Header =()=>{
             </div>
 
             <div className='barra--pesquisa'>
-                <input placeholder='    Diguitar Pesquisa' type="text" name="" id="" />
-                <button >Pesquisar</button>
+                <input placeholder='    Diguitar Pesquisa' type="text" name="" id="" onKeyUp={(e)=> setFilteredProducts(e.target.value)} />
+                <button onClick={()=>showProducts()}  >Pesquisar</button>
             </div>
         </header>
     )

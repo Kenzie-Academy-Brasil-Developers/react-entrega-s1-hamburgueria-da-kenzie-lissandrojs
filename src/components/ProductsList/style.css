@@ -8,6 +8,7 @@
 @media screen and (min-width: 700px) {
 
     .main--burger{
+        overflow: hidden;
         margin-top: 10px;
         display: flex;
         flex-direction: row;

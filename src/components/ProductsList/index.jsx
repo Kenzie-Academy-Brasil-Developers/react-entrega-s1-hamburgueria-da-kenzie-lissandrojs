@@ -1,15 +1,27 @@
 import Product from '../Product'
 import './style.css'
-const ProductsList = ({produto,handleClick})=>{
+import { useState } from 'react'
+const ProductsList = ({produto,handleClick,filteredProducts,valueInput})=>{
+        const [test,setTest] = useState([])
+
     return(
         <div className='main--burger'>
-            {produto.map((item)=>
+            {valueInput.length !== 0 ?
+            (valueInput.map((item)=>
             (  
-                <div>
+                <div key={item.id}>
                    
-                    <Product id={item.id} handleClick={handleClick} key={item.id} img={item.img} name={item.name} category={item.category} price={item.price}></Product>
+                    <Product id={item.id} handleClick={handleClick}  img={item.img} name={item.name} category={item.category} price={item.price}></Product>
                 </div>
-            ))}
+            ))):
+            (produto.map((item)=>
+            (  
+                <div key={item.id}>
+                   
+                    <Product id={item.id} handleClick={handleClick}  img={item.img} name={item.name} category={item.category} price={item.price}></Product>
+                </div>
+            )))
+            }
         </div>
     )
 

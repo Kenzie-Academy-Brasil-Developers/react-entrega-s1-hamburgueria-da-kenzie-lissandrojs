@@ -31,6 +31,7 @@
 }
 .item--card{
     display: flex;
+    justify-content:space-evenly;
 }
 .item--card img{
     background-color: #E0E0E0;
@@ -91,6 +92,7 @@
 
 
 .info--burger{
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -103,6 +105,10 @@
 }
 .align--card{
     margin-right: 0px;
+}
+.container--main--item{
+    overflow: auto;
+    scrollbar-color: transparent;
 }
 @media screen and (min-width: 700px) {
     .titulo--card{
