@@ -1,14 +1,15 @@
 import "./style.css";
 import "./reset.css";
-const Card = ({ currentSale,setCurrentSale}) => {
+const Card = ({ currentSale,setCurrentSale,setCartTotal,cartTotal}) => {
   
   const calcTotal =()=>{
    const allValue = currentSale.reduce((previousValue, currentValue) => previousValue + currentValue.price,0)
    return allValue
   }
-  const  test =(itemF)=>  {
+  const  removeItens =(itemF)=>  {
     setCurrentSale(currentSale.filter((value)=> value.id !== itemF))
    }
+  
   return (
     
 
@@ -22,7 +23,7 @@ const Card = ({ currentSale,setCurrentSale}) => {
               
                 <ul className="main--item">
                   {currentSale.map((item)=>{ return(
-                                  
+                                         
                                         <li key={item.id} className="item--card">
 
                                         <img src={item.img} alt={item.name} />
@@ -31,8 +32,10 @@ const Card = ({ currentSale,setCurrentSale}) => {
                                             <h2>{item.name}</h2>
                                             <p>{item.category}</p>
                                         </div>
-                                        <button id={item.id} onClick={(event)=>{test(item.id)}}>Remover</button>
-                                      </li>
+                                        <button id={item.id} onClick={(event)=>{removeItens(item.id)}}>Remover</button>
+                                      </li> 
+                                    
+                                 
                   )})}
 
                 </ul>
@@ -46,7 +49,7 @@ const Card = ({ currentSale,setCurrentSale}) => {
                 <span>R$ {calcTotal().toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
                 </div>
 
-                <button>Remover todos</button>
+                <button onClick={()=>setCurrentSale([])}>Remover todos</button>
             </div>
 
           </section>

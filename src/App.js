@@ -9,7 +9,7 @@ function App() {
   const [filteredProducts, setFilteredProducts] = useState()
   const [valueInput,setValueInput] = useState([])
   const [currentSale, setCurrentSale] = useState([])
-  const [cartTotal, setCartTotal] = useState(0)
+  const [cartTotal, setCartTotal] = useState([])
   useEffect(()=>{
     fetch('https://hamburgueria-kenzie-json-serve.herokuapp.com/products').then((resp) => resp.json()).then((resp) => setProduto(resp))
   },[])
@@ -23,9 +23,14 @@ function App() {
  }
 
  const handleClick =(productId)=>{
-    const addProd =produto.find((item)=> item.id == productId)
-   
-    setCurrentSale([...currentSale,addProd])
+     
+     const addProd = produto.find((item)=> item.id == productId && item.id !== currentSale.id )
+        
+
+            setCurrentSale([...currentSale,addProd ])
+     
+
+          setCartTotal([...cartTotal,addProd])
  }
 
   return (
@@ -33,7 +38,7 @@ function App() {
         <Header showProducts={showProducts} setFilteredProducts={setFilteredProducts} setValueInput={setValueInput}></Header>
         <div className='align--main'>
           <ProductsList filteredProducts={filteredProducts}handleClick={handleClick}produto={produto} valueInput={valueInput}></ProductsList>
-          <Card setCurrentSale={setCurrentSale} currentSale={currentSale} ></Card>
+          <Card setCurrentSale={setCurrentSale} currentSale={currentSale}  setCartTotal={setCartTotal} cartTotal={cartTotal}></Card>
         
         </div>
         

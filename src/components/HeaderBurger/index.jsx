@@ -1,8 +1,8 @@
 import './style.css'
 const Header =({setFilteredProducts,setValueInput,showProducts})=>{
     return(
-        <header>
-            <div className='logo--burger'>
+        <header >
+            <div className='logo--burger'  >
                 <h1>Burger</h1>
                 <h3>Kenzie</h3>
             </div>

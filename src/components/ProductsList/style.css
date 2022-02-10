@@ -10,10 +10,7 @@
     .main--burger{
         overflow: hidden;
         margin-top: 10px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: center;
-        justify-content: center;
+        display: block; 
+        columns: 3;
     }
 }
