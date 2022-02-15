@@ -24,13 +24,17 @@ function App() {
 
  const handleClick =(productId)=>{
      
-     const addProd = produto.find((item)=> item.id == productId && item.id !== currentSale.id )
+     const addProd = produto.find((item)=> item.id == productId)
         
+            if(currentSale.includes(addProd)){
 
-            setCurrentSale([...currentSale,addProd ])
+            }else{
+
+              setCurrentSale([...currentSale,addProd ])
+            }
      
 
-          setCartTotal([...cartTotal,addProd])
+          
  }
 
   return (
