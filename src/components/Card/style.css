@@ -63,7 +63,7 @@
 
 .div--border{
     border-top: 2px solid #E0E0E0;
-    width: 343px;
+    width: 288px;
 }
 .valor--total{
     width: 100%;
@@ -79,7 +79,7 @@
 }
 
 .div--border button{
-    width: 343px;
+    width: 288px;
     height: 60px;
     background-color: #E0E0E0;
     border: none;
@@ -115,13 +115,16 @@
 }
 @media screen and (min-width: 700px) {
     .titulo--card{
-        width: 365px;
+        width: 305px;
         height: 65px;
     }
     .main--card{
-        width: 363px;
+        width: 302px;
     }
     .align--card{
         margin-right: 30px;
+    }
+    .item--card img {
+        margin: 5px 0px 0 33px;
     }
 }
